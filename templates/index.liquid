@@ -1,4 +1,59 @@
-<div>
-  <h1>HOME</h1>
-  <p>Make some edits</p>
+{% assign main_product = all_products["the-perfect-chair"] %}
+{% assign current_variant = main_product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+<div class="headline">
+  <h1 class="line">Studio Silla</h1>
+  <span class="line">
+    <span>is more than just a manufacturer;</span>
+  </span>
+  <span class="line">
+    it's an artisanal workshop dedicated to
+  </span>
+  <span class="line">
+    redefining the essence of seating. Our
+  </span>
+  <span class="line">
+    Portuguese craftsmanship merges tradition
+  </span>
+  <span class="line">
+    with innovation, yielding a singular masterpiece:
+  </span>
+  <a
+    class="inline-link"
+    href="{{ main_product.url }}"
+    alt="The Perfect Chair - by Studio Silla">
+    <span>
+      The Perfect Chair</span>
+  </a>
 </div>
+
+<div class="product">
+  {% for image in main_product.images %}
+    <figure>
+      <img src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}">
+    </figure>
+  {% endfor %}
+{% comment %} <form
+                    action="/cart/add"
+                    method="post"
+                    enctype="multipart/form-data"
+                    id="AddToCartForm">
+                    <select name="id" id="productSelect">
+                      {% for variant in main_product.variants %}
+                        {% if variant.available %}
+                          <option value="{{variant.id}}">
+                            {{ variant.title }}
+                          </option>
+                        {% else %}
+                          <option disabled="disabled">
+                            {{ variant.title }} - sold out
+                          </option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+                    <span>{{ current_variant.price | | money_without_trailing_zeros }}</span>
+  </form> {% endcomment %}
+</div>
+
+<div class="logo"></div>
