@@ -1,5 +1,20 @@
+::root {
+  --clr-black :#393939
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+h1, span, a {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--clr-black);
+}
+
+h1 {
+  display: inline-block;
+
 }
