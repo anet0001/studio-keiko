@@ -33,7 +33,7 @@
 
     {{ content_for_header }}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'main.css' | asset_url | stylesheet_tag }}
 
 
     <script>
@@ -51,7 +51,7 @@
     </main>
 
 
-    <script src="{{ 'app.js' | asset_url }}" async></script>
+    <script src="{{ 'index.js' | asset_url }}" async></script>
 
   </body>
 </html>
