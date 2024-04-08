@@ -1,15 +1,23 @@
 {
   "name": "development-project-one",
+  "type": "module",
   "version": "1.0.0",
   "description": "#### Will be updated soon",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "shopify theme dev",
+    "watch": "nodemon -e js,ts,html,css --ignore assets --exec 'npm run build'",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gsap": "^3.12.5",
+    "lodash": "^4.17.21",
+    "nodemon": "^3.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.74.1",
     "vite": "^5.2.8"
   }
 }
