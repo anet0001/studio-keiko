@@ -27,8 +27,8 @@ export default defineConfig({
       plugins: [
         postcss({
           extract: path.resolve('assets/main.css'),
-          minimize: true,
           sourceMap: true,
+          minimize: true,
           use: {
             sass: {},
           },
