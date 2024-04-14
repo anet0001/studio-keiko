@@ -1,5 +1,7 @@
 import Text from './animations/Text.js';
 
+import '../styles/main.scss';
+
 class App {
   constructor() {
     console.log('Starting My Application');
