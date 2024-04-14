@@ -5,14 +5,16 @@
   "description": "#### Will be updated soon",
   "main": "index.js",
   "scripts": {
+    "start": "concurrently --kill-others \"npm run dev\" \"npm run watch\"",
     "dev": "shopify theme dev",
-    "watch": "nodemon -e js,ts,html,css --ignore assets --exec 'npm run build'",
+    "watch": "nodemon -e js,ts,html,scss,css --ignore assets --exec 'npm run build'",
     "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "gsap": "^3.12.5",
     "lodash": "^4.17.21",
     "nodemon": "^3.1.0",
