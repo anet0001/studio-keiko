@@ -16,17 +16,19 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'src/app/index.js',
-        // style: 'src/styles/main.scss',
       },
       output: {
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
         format: 'es',
         inlineDynamicImports: false,
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name == 'style.css') return 'main.css';
+          return assetInfo.name;
+        },
       },
       plugins: [
         postcss({
-          extract: path.resolve('assets/main.css'),
           sourceMap: true,
           minimize: true,
           use: {
