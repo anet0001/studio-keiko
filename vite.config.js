@@ -18,8 +18,8 @@ export default defineConfig({
         main: 'src/app/index.js',
       },
       output: {
-        entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
+        entryFileNames: '[name].js',
         format: 'es',
         inlineDynamicImports: false,
         assetFileNames: (assetInfo) => {
