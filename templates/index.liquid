@@ -35,24 +35,24 @@
     </figure>
   {% endfor %}
 {% comment %} <form
-                    action="/cart/add"
-                    method="post"
-                    enctype="multipart/form-data"
-                    id="AddToCartForm">
-                    <select name="id" id="productSelect">
-                      {% for variant in main_product.variants %}
-                        {% if variant.available %}
-                          <option value="{{variant.id}}">
-                            {{ variant.title }}
-                          </option>
-                        {% else %}
-                          <option disabled="disabled">
-                            {{ variant.title }} - sold out
-                          </option>
-                        {% endif %}
-                      {% endfor %}
-                    </select>
-                    <span>{{ current_variant.price | | money_without_trailing_zeros }}</span>
+                      action="/cart/add"
+                      method="post"
+                      enctype="multipart/form-data"
+                      id="AddToCartForm">
+                      <select name="id" id="productSelect">
+                        {% for variant in main_product.variants %}
+                          {% if variant.available %}
+                            <option value="{{variant.id}}">
+                              {{ variant.title }}
+                            </option>
+                          {% else %}
+                            <option disabled="disabled">
+                              {{ variant.title }} - sold out
+                            </option>
+                          {% endif %}
+                        {% endfor %}
+                      </select>
+                      <span>{{ current_variant.price | | money_without_trailing_zeros }}</span>
   </form> {% endcomment %}
 </div>
 
