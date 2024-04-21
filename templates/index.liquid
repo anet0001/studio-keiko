@@ -1,6 +1,6 @@
 {% assign main_product = all_products["the-perfect-chair"] %}
 {% assign current_variant = main_product.selected_or_first_available_variant %}
-{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+{% comment %} {% assign featured_image = current_variant.featured_image | default: product.featured_image %} {% endcomment %}
 
 <div class="headline">
   <h1 class="line">Studio Silla</h1>
@@ -35,24 +35,24 @@
     </figure>
   {% endfor %}
 {% comment %} <form
-                      action="/cart/add"
-                      method="post"
-                      enctype="multipart/form-data"
-                      id="AddToCartForm">
-                      <select name="id" id="productSelect">
-                        {% for variant in main_product.variants %}
-                          {% if variant.available %}
-                            <option value="{{variant.id}}">
-                              {{ variant.title }}
-                            </option>
-                          {% else %}
-                            <option disabled="disabled">
-                              {{ variant.title }} - sold out
-                            </option>
-                          {% endif %}
-                        {% endfor %}
-                      </select>
-                      <span>{{ current_variant.price | | money_without_trailing_zeros }}</span>
+                        action="/cart/add"
+                        method="post"
+                        enctype="multipart/form-data"
+                        id="AddToCartForm">
+                        <select name="id" id="productSelect">
+                          {% for variant in main_product.variants %}
+                            {% if variant.available %}
+                              <option value="{{variant.id}}">
+                                {{ variant.title }}
+                              </option>
+                            {% else %}
+                              <option disabled="disabled">
+                                {{ variant.title }} - sold out
+                              </option>
+                            {% endif %}
+                          {% endfor %}
+                        </select>
+                        <span>{{ current_variant.price | | money_without_trailing_zeros }}</span>
   </form> {% endcomment %}
 </div>
 
