@@ -1,3 +1,4 @@
+{% assign current_template = 'product' %}
 {% assign main_product = all_products["the-perfect-chair"] %}
 {% assign current_variant = main_product.selected_or_first_available_variant %}
 {% assign description_paragraphs = main_product.description | newline_to_br | split: '<br />' %}
