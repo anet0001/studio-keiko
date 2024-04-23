@@ -5,12 +5,21 @@ import '../styles/main.scss';
 class App {
   constructor() {
     console.log('Starting My Application');
-    this.initTextAnimation();
+
+    this.createContent();
+    this.createPages();
+
+    console.log(this.template)
   }
 
-  initTextAnimation() {
-    this.text = new Text();
+  createContent() {
+    this.content = document.querySelector("#content");
+		this.template = this.content.getAttribute("data-template");
   }
+
+  createPages() {}
 }
+
+
 
 new App();
