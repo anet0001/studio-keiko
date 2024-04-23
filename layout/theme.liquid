@@ -46,7 +46,7 @@
   <body>
     {% render 'header' %}
 
-    <main>
+    <main id="content" data-template="{{current_template}}">
       {{ content_for_layout }}
     </main>
 
