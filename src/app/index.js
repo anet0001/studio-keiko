@@ -9,7 +9,6 @@ class App {
     this.createContent();
     this.createPages();
 
-    console.log(this.template)
   }
 
   createContent() {
