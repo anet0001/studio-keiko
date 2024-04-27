@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import postcss from 'rollup-plugin-postcss';
+import copy from 'rollup-plugin-copy'
+
 
 export default defineConfig({
+  assetsInclude: ['**/*.svg'],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src/app'),
@@ -35,6 +38,7 @@ export default defineConfig({
             sass: {},
           },
         }),
+        
       ],
     },
   },
