@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "concurrently": "^8.2.2",
     "gsap": "^3.12.5",
     "include-media": "^2.0.0",
@@ -25,8 +26,5 @@
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.74.1",
     "vite": "^5.2.8"
-  },
-  "dependencies": {
-    "@studio-freight/lenis": "^1.0.42"
   }
 }
