@@ -1,3 +1,12 @@
+{% capture normalized_template_name %}
+  {% if template.name == 'index' %}
+    home
+  {% elsif template.name == 'shop' %}
+    index
+  {% else %}
+    {{ template.name }}{% if template.suffix %}.{{ template.suffix }}{% endif %}
+  {% endif %}
+{% endcapture %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,9 +53,12 @@
     </script>
   </head>
   <body>
+    {% comment %} {% render "preloader" %} {% endcomment %}
     {% render 'header' %}
+    {% render 'logo' %}
 
-    <main id="content" data-template="{{current_template}}">
+
+    <main id="content" data-template="{{ normalized_template_name | strip }}">
       {{ content_for_layout }}
     </main>
 

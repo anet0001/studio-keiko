@@ -1,0 +1,85 @@
+.product__info {
+  position: fixed;
+  bottom: var(--layout-spacing);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36.8rem;
+  z-index: z('content');
+  perspective: 1200px;
+}
+
+.product__info-toggle {
+  position: fixed;
+  bottom: var(--layout-spacing);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36.8rem;
+  height: 6.5rem;
+  z-index: z('content-toggle');
+  color: #ffffff;
+}
+
+.product__info-toggle:hover ,
+ {
+  cursor: pointer;
+}
+
+.product__info-toggle:hover span,
+.product__info-toggle:focus-visible span {
+  background-color: $color-atlantis;
+}
+
+.product__info .block {
+  --pseudo: intial;
+  position: relative;
+  width: 100%;
+  height: 6.3rem;
+  backface-visibility: hidden;
+  font-size: 18px;
+
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  background-color: $color-mine;
+}
+
+// $colors: red, orange, yellow, green, blue, indigo, violet;
+
+// @for $i from 1 through length($colors) {
+//   .product__info .block--#{$i} .content {
+//     background-color: nth($colors, $i);
+//   }
+// }
+
+.product__info .block--1 {
+  z-index: 5;
+}
+.product__info .block--2 {
+  z-index: 4;
+}
+.product__info .block--3 {
+  z-index: 3;
+}
+.product__info .block--4 {
+  z-index: 2;
+}
+// .product__info .block--5 {
+//   z-index: 1;
+// }
+
+.product__info .block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-mine;
+  backface-visibility: visible;
+  transform: rotateY(180deg);
+  z-index: var(--pseudo);
+}

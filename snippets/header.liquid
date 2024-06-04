@@ -1,10 +1,18 @@
 <header id="header">
-  {% comment %} TODO: Link to backend {% endcomment %}
-  <h1>Studio Silla</h1>
+  <h1>
+    <span>Studio Keiko</span>
+    {% render 'logo-svg' %}
+    <span>Functional Pieces</span>
+  </h1>
   <nav>
+    <span class="indicator"></span>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/cart">Cart</a></li>
+      <li><a data-type="navigation" data-index="0" href="/">Home</a></li>
+      <li><a data-type="navigation" data-index="1" href="/pages/about">About</a></li>
+      <li><a data-type="navigation" data-index="2" href="/pages/index">Index</a></li>
+      <li><a data-type="navigation" data-index="3" href="/cart">Cart</a></li>
+      <li><a data-type="navigation" data-index="4" href="/products/the-perfect-chair">Chair</a></li>
+      <li><a data-type="navigation" data-index="5" href="/pages/contact">Talk</a></li>
     </ul>
   </nav>
 </header>

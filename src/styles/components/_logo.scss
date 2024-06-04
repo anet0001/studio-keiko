@@ -1,0 +1,53 @@
+.logo__container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100vw;
+  height: 100dvh;
+  flex-direction: column;
+  justify-content: flex-end;
+	z-index: z("logo");
+}
+
+.logo__content {
+	--grid-size: 16;
+	display: grid;
+	grid-template-columns: repeat(var(--grid-size), 1fr);
+	
+	grid-template-areas: "a . . . . . . . . . . . . . . ."
+	"b . . . . . . . . . . . . . . ."
+	"c . . . . . . . . . . . . . . ."
+	"d e f g h i j k l m n o p q r s"
+	"t . . . . . . . . . . . . . . u"
+	"v . . . . . . . . . . . . . . w";
+
+	@include media("<=phone"){
+		--grid-size: 8;
+
+		$areas: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o;
+
+
+		grid-template-areas: "a . . . . . . . "
+	"b . . . . . . ."
+	"c . . . . . . ."
+	"d e f g h i j k"
+	"l . . . . . . m"
+	"n . . . . . . o";
+	}
+}
+
+.logo__content .square {
+	aspect-ratio: 1/1;
+	background-color: $color-atlantis;
+	visibility: hidden;
+}
+
+
+$areas: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w;
+
+@for $i from 1 through length($areas) {
+  .logo__content .square:nth-child(#{$i}) {
+    grid-area: #{nth($areas, $i)};
+  }
+}

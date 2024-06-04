@@ -1,0 +1,33 @@
+.product__container .image-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+}
+
+.product__container .image-track figure {
+  width: 61.4rem;
+  height: 81.867rem;
+  background-color: #c4c4c4;
+}
+
+.product__container .image-track figure:nth-child(2) {
+  background-color: #b2aeae;
+	height: 34.538rem;
+}
+
+.product__container .image-track figure:nth-child(3) {
+	height: 46.05rem;
+	background-color: #bbbbbb;
+}
+
+.product__container .image-track figure:nth-child(4) {
+	height: 81.867rem;
+	background-color: #C3B6B6;
+}
+
+.product__container .image-track figure:nth-child(5) {
+	height: 61.4rem;
+	background-color: #B49A9A;
+}

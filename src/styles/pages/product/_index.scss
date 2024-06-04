@@ -1,0 +1,9 @@
+@import "./partials/product-info";
+@import "./partials/image-track";
+
+.product__container {
+	position: relative;
+	z-index: z("content");
+	padding-top: 21rem;
+	padding-bottom:  calc(2 * var(--layout-spacing));
+}

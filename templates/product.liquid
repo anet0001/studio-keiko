@@ -1,72 +1,104 @@
-{% assign current_template = 'product' %}
 {% assign main_product = all_products["the-perfect-chair"] %}
-{% assign current_variant = main_product.selected_or_first_available_variant %}
+{% comment %} {% assign current_variant = main_product.selected_or_first_available_variant %} {% endcomment %}
 {% assign description_paragraphs = main_product.description | newline_to_br | split: '<br />' %}
 
 
-<div class="product__wrapper">
+<div class="product__container">
   <section class="image-track">
     <figure></figure>
     <figure></figure>
     <figure></figure>
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
   </section>
-  <section class="info">
-    <header>
-      <h2 class="product__title">{{ main_product.title }}</h2>
-    </header>
-    <div class="product__description">
-      {% for paragraph in description_paragraphs %}
-        {% assign stripped_paragraph = paragraph | strip %}
-        {% if stripped_paragraph != '' %}
-          {{ paragraph }}
-        {% endif %}
-      {% endfor %}
+  <div class="product__info">
+    <div class="block block--1">
+      <div class="content">
+        front
+      </div>
     </div>
-
-    <ul class="product__details">
-      <li>spec 1</li>
-      <li>spec 2</li>
-      <li>spec 3</li>
-    </ul>
-
-    <div class="product__variant-form">
-      <form
-        action="/cart/add"
-        method="post"
-        enctype="multipart/form-data"
-        id="aTCForm">
-        <label for="productSelect">COLOR</label>
-        <select name="id" id="productSelect">
-          {% for variant in main_product.variants %}
-            {% if variant.available %}
-              <option value="{{variant.id}}">
-                {{ variant.title }}
-              </option>
-            {% else %}
-              <option disabled="disabled">
-                {{ variant.title }} - sold out
-              </option>
-            {% endif %}
-          {% endfor %}
-        </select>
-        <div class="form__pair">
-          <label for="quantity">QUANTITY</label>
-          <input
-            name="quantity"
-            id="quantity"
-            value="1"
-            min="1"
-            max="3"
-            type="number">
-        </div>
-        <button
-          type="submit"
-          name="add"
-          id="aTC">
-          <span>PREORDER</span>
-          <span>{{ main_product.price | money_without_trailing_zeros }}</span>
-        </button>
-      </form>
+    <div class="block block--2">
+      <div class="content">
+        front
+      </div>
     </div>
-  </section>
+    <div class="block block--3">
+      <div class="content">
+        front
+      </div>
+    </div>
+    <div class="block block--4">
+      <div class="content">
+        front
+      </div>
+    </div>
+  {% comment %} <div class="block block--5">
+          <div class="content"></div>
+      </div> {% endcomment %}
+  </div>
+  <button class="product__info-toggle">
+    <span>
+      PREORDER
+    </span>
+  </button>
+{% comment %} <section class="info">
+                                                  <header>
+                                                    <h2 class="product__title">{{ main_product.title }}</h2>
+                                                  </header>
+                                                  <div class="product__description">
+                                                    {% for paragraph in description_paragraphs %}
+                                                      {% assign stripped_paragraph = paragraph | strip %}
+                                                      {% if stripped_paragraph != '' %}
+                                                        {{ paragraph }}
+                                                      {% endif %}
+                                                    {% endfor %}
+                                                  </div>
+
+                                                  <ul class="product__details">
+                                                    <li>spec 1</li>
+                                                    <li>spec 2</li>
+                                                    <li>spec 3</li>
+                                                  </ul>
+
+                                                  <div class="product__variant-form">
+                                                    <form
+                                                      action="/cart/add"
+                                                      method="post"
+                                                      enctype="multipart/form-data"
+                                                      id="aTCForm">
+                                                      <label for="productSelect">COLOR</label>
+                                                      <select name="id" id="productSelect">
+                                                        {% for variant in main_product.variants %}
+                                                          {% if variant.available %}
+                                                            <option value="{{variant.id}}">
+                                                              {{ variant.title }}
+                                                            </option>
+                                                          {% else %}
+                                                            <option disabled="disabled">
+                                                              {{ variant.title }} - sold out
+                                                            </option>
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                      </select>
+                                                      <div class="form__pair">
+                                                        <label for="quantity">QUANTITY</label>
+                                                        <input
+                                                          name="quantity"
+                                                          id="quantity"
+                                                          value="1"
+                                                          min="1"
+                                                          max="3"
+                                                          type="number">
+                                                      </div>
+                                                      <button
+                                                        type="submit"
+                                                        name="add"
+                                                        id="aTC">
+                                                        <span>PREORDER</span>
+                                                        <span>{{ main_product.price | money_without_trailing_zeros }}</span>
+                                                      </button>
+                                                    </form>
+                                                  </div>
+  </section> {% endcomment %}
 </div>

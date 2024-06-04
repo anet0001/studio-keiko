@@ -1,5 +1,36 @@
+@import "./base/reset";
+
+@import "./vendor/vendor";
+
+@import "./abstract/variables";
+@import "./abstract/functions";
+@import "./abstract/mixins";
+@import "./abstract/animations";
+
+@import "./shared/titles";
+@import "./shared/descriptions";
+
+@import "./base/type";
 @import "./base/base";
 
-.theme {
-	color: red;
+@import "./components/cursor";
+@import "./components/logo";
+@import "./components/preloader";
+
+@import "./layout/grid";
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./pages/index";
+
+
+.about__container, .cart__container, .index__container, .contact__container {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+
+	h1 {
+		font-size: 30px;
+		text-transform: uppercase;
+	}
 }
